@@ -32,7 +32,7 @@ h2, .h2{
 h3, .h3{
     font-size: 1.7em;
 }
-h4 .flx{
+h4, .flx{
     font-size: 1.4em;
 }
 h5, .fll{
@@ -47,19 +47,30 @@ h5, .fll{
     font-size: 0.694rem;
 }
 
-.container, main, aside{
+body, main, aside{
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 4em;
 }
 
-
-
-.header-hero{
+nav{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav a{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+nav a.active{
+    display: block;
+}
+
+/* Header styles */
+.header-hero{
+    background-color: var(--primary-color-light);
 }
 header{
     display: flex;
@@ -70,22 +81,32 @@ header{
 }
 .hero-section{
     display: flex;
-    padding: 0rem 2rem;
+    padding: 3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
     align-self: stretch;
 }
+.hero-section section:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.hero-section h1{
+    color: var(--primary-color);
+    margin: 0;
+}
 header img{
     width: 72px;
 }
-.header-hero h1{
+header h1{
     color: var(--primary-color)
 }
 
 .cta{
-    display: inline-block;
+    display: block;
+    width: fit-content;
     background-color: var(--accent-colorA);
     border-radius: 0.5rem;
     padding: 1rem;
@@ -99,12 +120,19 @@ header img{
     justify-content: center;
     align-items: center;
     border-radius: 12.5rem;
-    
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.circular-icon:hover{
+    transform: scale(1.1); /* Hover effect */
 }
 .circular-icon.push{
     background-color: var(--accent-colorA);
-
     box-shadow: 0px 4px 24px 0px var(--accent-colorA);
+}
+.circular-icon svg{
+    color: white;
+    width: 80%;
 }
 .circular-icon.cheers{
     background-color: var(--primary-color);
@@ -117,13 +145,25 @@ header img{
     /* align-items: flex-start; */
     gap: .5rem
 }
+
+
+
+/* header styles end */
+
+
 .engagement{
+    font-size: 1.5rem;
     display: flex;
     padding: 1rem 2rem;
     flex-direction: column;
     align-items: center;
     gap: 4.5rem;
     align-self: stretch;
+}
+.engagement div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feature-container, .app-container{
@@ -170,6 +210,7 @@ header img{
 
 .feature-container .card h3{
     color: var(--primary-color);
+    margin: 0;
 }
 .feature-container .card h3 span{
     display: block;
@@ -262,17 +303,13 @@ header img{
     box-shadow: 2px 2px 5px var(--primary-color-light)
     /* border: 1px solid black; */
 }
-.news-section .card h3{
-    text-align: center;
-}
-.news-section .card p{
-    text-align: justify;
-}
-.news-section .card .image{
+
+/* .news-section .card .image{
     height: 35%;
-}
+} */
 .news-section .card img{
     display: block;
+    width: 30%;
 }
 
 .feedback-section{
@@ -284,8 +321,10 @@ header img{
     margin: auto;
     background-color: var(--primary-color-light);
 }
-.feedback-section h5{
+.feedback-section div{
     text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 .feedback-block{
     display: flex;
@@ -327,6 +366,7 @@ footer .waiting-list{
 }
 footer .waiting-list .cta{
     padding: .8rem !important;
+    display: block;
 }
 footer .waiting-list h5{
     margin: 0;
@@ -339,6 +379,7 @@ footer .main{
 }
 footer img{
     width: 80%;
+    display: block;
 }
 footer ul{
     list-style-type: none;
@@ -355,4 +396,127 @@ footer a{
 footer .link-container{
     display: flex;
     gap: 2.3rem;
+}
+
+@media screen and (max-width: 750px) {
+    .toggle-bar{
+        display: block !important; /* display menu bar */
+        cursor: pointer;
+    }
+    nav a{
+        display: block; 
+    } 
+    header nav{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transition: left 0.3s ease;
+    padding: 20px 0;
+
+    flex-direction: column;
+    gap: 0;
+    }
+    header nav.active{
+        left: 0;
+    }
+
+    header nav a{
+        display: block;
+        padding: 1rem 1.2rem;
+
+    }
+}
+
+@media screen and (min-width:599px){
+    .logo{
+        width: 10%;
+    }
+    .btn-group{
+        flex-direction: row;
+        gap: 3rem;
+    }
+    .circular-icon{
+        width: 10rem;
+        height: 10rem;
+    }
+    .engagement{
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+    .feature-container .card .text{
+        max-width: 610px;
+    }
+
+    .news-section .card-block .card{
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+    }
+
+    /* .news-section .card .image{
+        width: 20%;
+        height: 100%;
+    } */
+}
+
+
+
+
+@media screen and (min-width:999px){
+    .hero-section{
+        flex-direction: row;
+        gap: 2.2rem;
+    }
+    .hero-section h1{
+        font-size: 4rem;
+    }
+    .hero-section p{
+        font-size: 1.4em;
+    }
+    .btn-group{
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+    .circular-icon{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .feature-container .card{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    /* change order */
+    .feature-container .card:nth-child(even) .text{
+        order: 2;
+    }
+}
+@media screen and (min-width: 1250px) {
+    .waiting-list{
+        display: flex;
+        justify-content: space-between;
+    }
+    .waiting-list .cta{
+        display: block;
+    }
+
+    footer.main{
+        width: 80%;
+    }
+    footer .main{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    footer .main img{
+        width: 40%;
+    }
+    footer .main .link-container{
+        gap: 5em;
+    }
+    
 }
