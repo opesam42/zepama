@@ -72,12 +72,14 @@ nav a.active{
 
 /* Header styles */
 .header-hero{
-    background-color: var(--primary-color-light);
+    /* background-color: var(--primary-color-light); */
+    background-image: linear-gradient(var(--primary-color-light), var(--primary-color));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 header{
@@ -104,8 +106,11 @@ header{
     gap: 1.5rem;
 }
 .hero-section h1{
-    color: var(--primary-color);
+    color: var(--text-color);
     margin: 0;
+}
+.hero-section p{
+    color: white;
 }
 header img{
     width: 72px;
@@ -117,13 +122,16 @@ header h1{
 .cta{
     display: block;
     width: fit-content;
-    background-color: var(--accent-colorA);
+    /* background-color: var(--accent-colorA); */
+    background-color: azure;
     border-radius: 0.5rem;
     padding: 1rem;
-    color: white;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 .circular-icon{
     display: flex;
+    flex-direction: column;
     width: 6.25rem;
     height: 6.25rem;
     padding: 0.875rem;
@@ -137,13 +145,16 @@ header h1{
     transform: scale(1.1); /* Hover effect */
 }
 .circular-icon.push{
-    background-color: var(--accent-colorA);
-    box-shadow: 0px 4px 24px 0px var(--accent-colorA);
+    background-color: white;
+    color: var(--primary-color);
+    box-shadow: 0px 4px 24px 0px white;
 }
+
 .circular-icon svg{
     color: white;
-    width: 80%;
+    width: 60%;
 }
+
 .circular-icon.cheers{
     background-color: var(--primary-color);
     box-shadow: 0px 4px 24px 0px var(--primary-color);
