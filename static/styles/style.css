@@ -76,7 +76,8 @@ nav a.active{
 .header-hero{
     /* background-color: var(--primary-color-light); */
     /* background-image: linear-gradient(var(--primary-color-light), var(--primary-color)); */
-    background: #E5BFFC; background: linear-gradient(135deg, #E5BFFC, #AB77D1);
+    /* background: #E5BFFC; background: linear-gradient(135deg, #E5BFFC, #AB77D1); */
+    background-color: var(--primary-color-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,15 +135,18 @@ header h1{
 .cta:hover{
     background-color: var(--primary-color-light);
     color: var(--text-color);
+    border: 2px solid var(--text-color);
 }
-.cta.white{
+/* .cta.white{
     background-color: var(--primary-color-light);
     color: var(--primary-color);
-}
+} */
 .cta.white:hover{
     background-color: white;
 }
 .circular-icon{
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 24px 0px var(--primary-color);
     display: flex;
     flex-direction: column;
     width: 6.25rem;
@@ -158,9 +162,9 @@ header h1{
     transform: scale(1.1); /* Hover effect */
 }
 .circular-icon.push{
-    background-color: white;
+    /* background-color: white; */
     color: var(--primary-color);
-    box-shadow: 0px 4px 24px 0px white;
+    /* box-shadow: 0px 4px 24px 0px white; */
 }
 
 .circular-icon svg{
@@ -170,7 +174,7 @@ header h1{
 
 .circular-icon.cheers{
     /* background-color: var(--primary-color); */
-    background-color: #FFC000;
+    /* background-color: #FFC000; */
     box-shadow: 0px 4px 24px 0px var(--primary-color);
 }
 @keyframes burst {
