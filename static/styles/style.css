@@ -65,7 +65,9 @@ nav a{
     color: var(--primary-color);
     font-weight: 600;
 }
-
+nav a:hover{
+    border-bottom: 2px solid var(--primary-color);
+}
 nav a.active{
     display: block;
 }
@@ -73,7 +75,8 @@ nav a.active{
 /* Header styles */
 .header-hero{
     /* background-color: var(--primary-color-light); */
-    background-image: linear-gradient(var(--primary-color-light), var(--primary-color));
+    /* background-image: linear-gradient(var(--primary-color-light), var(--primary-color)); */
+    background: #E5BFFC; background: linear-gradient(135deg, #E5BFFC, #AB77D1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,7 +113,7 @@ header{
     margin: 0;
 }
 .hero-section p{
-    color: white;
+    color: var(--text-color);
 }
 header img{
     width: 72px;
@@ -128,9 +131,16 @@ header h1{
     color: white;
     font-weight: 600;
 }
+.cta:hover{
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+}
 .cta.white{
     background-color: var(--primary-color-light);
     color: var(--primary-color);
+}
+.cta.white:hover{
+    background-color: white;
 }
 .circular-icon{
     display: flex;
