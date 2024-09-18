@@ -1,7 +1,7 @@
 :root{
     --primary-color: #42307D;
     --primary-color-light: #EBE9FE;
-    --accent-colorA: #FB6514;
+    --accent-colorA:  #FFC000;
     --text-color: #101828;
 }
 
@@ -122,12 +122,15 @@ header h1{
 .cta{
     display: block;
     width: fit-content;
-    /* background-color: var(--accent-colorA); */
-    background-color: azure;
+    background-color: var(--accent-colorA);
     border-radius: 0.5rem;
     padding: 1rem;
-    color: var(--primary-color);
+    color: white;
     font-weight: 600;
+}
+.cta.white{
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
 }
 .circular-icon{
     display: flex;
@@ -156,7 +159,8 @@ header h1{
 }
 
 .circular-icon.cheers{
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
+    background-color: #FFC000;
     box-shadow: 0px 4px 24px 0px var(--primary-color);
 }
 .btn-group{
@@ -227,6 +231,7 @@ header h1{
 .feature-container .card-block .extra{
     font-family: 'Inter';
     font-weight: bold;
+    display: none;
 }
 
 .feature-container .card h3{
@@ -562,18 +567,42 @@ footer .link-container{
         height: 10rem;
     }
 
+    .feature-container .card-block{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* justify-content: ; */
+        /* gap: 0em; */
+    }
     .feature-container .card{
         flex-direction: row;
         justify-content: space-between;
-        padding-left: 8%;
-        padding-right: 8%;
+        width: 40%;
+        flex: 0 0 40%;
+        /* padding-left: 8%; */
+        /* padding-right: 8%; */
     }
+    .feature-container .card-block img{
+        width: 100% !important;
+        display: block;
+    }
+    .feature-container .image{
+        width: 100%;
+    }
+    
     /* change order */
     .feature-container .card:nth-child(even) .text{
         order: 2;
     }
 }
 @media screen and (min-width: 1250px) {
+    /* .feature-container .card-block{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .feature-container .card-block .card{
+        width: 40%;
+    } */
     .waiting-list{
         /* display: flex; */
         flex-direction: row !important;
